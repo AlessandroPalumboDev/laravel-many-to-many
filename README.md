@@ -20,7 +20,7 @@ I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che a
 
 ## Bonus 1:
 
--   [] Creare il seeder per il model Technology.
+-   [&check;] Creare il seeder per il model Technology.
 
 ## Bonus 2:
 
