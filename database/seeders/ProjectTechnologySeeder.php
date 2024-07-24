@@ -19,8 +19,8 @@ class ProjectTechnologySeeder extends Seeder
         for($i = 0; $i < 10; $i++){
             $new_project_technology =  new ProjectTechnology();
 
-            $new_project_technology = Project::inRandomOrder()->first()->id;
-            $new_project_technology = Technology::inRandomOrder()->first()->id;
+            $new_project_technology->project_id = Project::inRandomOrder()->first()->id;
+            $new_project_technology->technology_id = Technology::inRandomOrder()->first()->id;
 
             $new_project_technology->save();
 
