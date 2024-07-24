@@ -12,7 +12,7 @@ I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che a
 
 <!-- &check; -->
 
--   [] Creare la migration per la tabella technologies
+-   [&check;] Creare la migration per la tabella technologies
 -   [] Creare il model Technology
 -   [] Creare la migration per la tabella pivot project_technology
 -   [] Aggiungere ai model Technology e Project i metodi per definire la relazione many to many
