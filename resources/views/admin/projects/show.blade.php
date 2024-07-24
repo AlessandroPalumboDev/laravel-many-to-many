@@ -16,6 +16,17 @@
                     </h5>
                     <hr>
                     <h5>
+                        Tecnologie utilizzate: 
+                    </h5>
+                    <ul>
+                        @foreach ($project->technology as $technology)
+                            <li >
+                                {{$technology->name}}
+                            </li>
+                        @endforeach
+                    </ul>
+                    <hr>
+                    <h5>
                         Descrizione:
                     </h5>
                     <p>

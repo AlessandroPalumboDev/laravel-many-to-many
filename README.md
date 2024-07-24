@@ -16,7 +16,7 @@ I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che a
 -   [&check;] Creare il model Technology
 -   [&check;] Creare la migration per la tabella pivot project_technology
 -   [&check;] Aggiungere ai model Technology e Project i metodi per definire la relazione many to many
--   [] Visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
+-   [&check;] Visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
 
 ## Bonus 1:
 
@@ -24,4 +24,4 @@ I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che a
 
 ## Bonus 2:
 
--   [] Aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.
+-   [&cross;] Aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.
