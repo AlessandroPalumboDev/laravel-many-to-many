@@ -56,7 +56,7 @@ class ProjectController extends Controller
         }
         
 
-        return redirect()->route('admin.projects.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->id)->with('message', 'Progetto ' . $project->title . 'creato correttamente');
     }
 
     /**
@@ -87,6 +87,12 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $project->update($data);
+
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->technologies);
+        } else {
+            $project->technologies()->detach();
+        }
 
         return redirect()->route('admin.projects.show', $project->id);
     }

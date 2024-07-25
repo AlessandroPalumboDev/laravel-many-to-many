@@ -38,6 +38,33 @@
                                 @endforeach
                               </select>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="project-content" class="form-label">Tecnlogie utilizzate:</label>
+
+                            <div>
+                                @foreach ($technologies as $technology)
+                                    <div class="form-check form-check-inline">
+
+                                        @if($errors->any())
+                                            <input class="form-check-input" type="checkbox" name="technologies[]" id="tec-{{$technology->id}}" value="{{$technology->id}}" 
+
+                                            {{in_array($technology->id, old('technologies', [] )) ? 'checked' : ''}}>
+
+                                            <label class="form-check-label" for="tec-{{$technology->id}}">{{$technology->name}}</label>
+                                        @else
+                                            <input class="form-check-input" type="checkbox" name="technologies[]" id="tec-{{$technology->id}}" value="{{$technology->id}}" 
+
+                                            {{$project->technologies->contains($technology) ? 'checked' : ''}}>
+
+                                            <label class="form-check-label" for="tec-{{$technology->id}}">{{$technology->name}}</label>
+                                        @endif
+
+                                    </div>
+                                @endforeach
+                            </div>
+
+                        </div>
     
                         <div class="mb-3">
                             <label for="description" class="form-label">Descrizione Progetto</label>

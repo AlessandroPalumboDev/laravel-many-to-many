@@ -24,7 +24,8 @@ class UpdateProjectRequest extends FormRequest
         return [
             'name' => 'required|string|max:50',
             'description' => 'string|max:500',
-            'type_id' => 'nullable|exists:types,id'
+            'type_id' => 'nullable|exists:types,id',
+            'technologies' => 'nullable|exists:technologies,id',
         ];
     }
 
@@ -34,7 +35,9 @@ class UpdateProjectRequest extends FormRequest
             'name.required' => 'Il nome del progetto è obbligatorio!',
             'name.max' => 'Il nome del progetto non può contenere più di 50 caratteri',
             'description.max' => 'La descrizione del progetto non può contenere più di 500 caratteri',
-            'type_id.exists' => 'La categoria non esiste'
+            'type_id.exists' => 'La categoria non esiste',
+            'technologies.exists' => 'La tecnologia non esiste',
+
         ];
     }
 }
