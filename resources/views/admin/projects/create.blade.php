@@ -40,12 +40,12 @@
 
 
                         <div class="mb-3">
-                            <label for="project-content" class="form-label">Tecnlogie utilizzate</label>
+                            <label for="project-content" class="form-label">Tecnlogie utilizzate:</label>
 
                             <div>
                                 @foreach ($technologies as $technology)
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="technologies[]" id="tec-{{$technology->id}}" value="{{$technology->id}}">
+                                    <input class="form-check-input" type="checkbox" name="technologies[]" id="tec-{{$technology->id}}" value="{{$technology->id}}" {{in_array($technology->id, old('technologies', [] )) ? 'checked' : ''}}>
                                     <label class="form-check-label" for="tec-{{$technology->id}}">{{$technology->name}}</label>
                                 </div>
                                 @endforeach

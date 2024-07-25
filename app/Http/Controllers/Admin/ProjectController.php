@@ -38,8 +38,6 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
-        
-        // dd($request->all());
 
         $project = new Project();
 
@@ -48,8 +46,15 @@ class ProjectController extends Controller
         $project->slug = Str::of($data['name'])->slug();
         $project->type_id = $data['type_id'];
 
-
         $project->save();
+
+
+        //  dopo il save perchè prima non esiste ancora l'id del post (non è salvato)
+        if($request->has('technologies')){
+
+            $project->technologies()->attach($request->technologies);
+        }
+        
 
         return redirect()->route('admin.projects.show', $project->id);
     }
