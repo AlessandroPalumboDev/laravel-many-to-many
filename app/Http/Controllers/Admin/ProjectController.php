@@ -77,6 +77,8 @@ class ProjectController extends Controller
         $types = Type::all();
         $technologies = Technology::all();
 
+        
+
         return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
@@ -87,6 +89,8 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $project->update($data);
+
+        // dd($project->technologies);
 
         if ($request->has('technologies')) {
             $project->technologies()->sync($request->technologies);
@@ -102,6 +106,11 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
+        // cancello relazione per sicurezza
+        $project->technologies()->detach();
+
+
+
         $project = Project::findOrFail($id);
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', $project->id . 'Progeto cancellato correttamente');

@@ -36,6 +36,6 @@ Continuiamo a lavorare sul codice di ieri, stessa repo.
 
 ### I task sono:
 
--   [&cross;] Permettere all’utente di associare le tecnologie nella pagina di creazione e modifica di un progetto
--   [&cross;] Gestire il salvataggio dell’associazione progetto-tecnologie con opportune regole di validazione
--   [&cross;] Eliminare opportunamente le relazioni alla cancellazione del progetto/technology
+-   [&check;] Permettere all’utente di associare le tecnologie nella pagina di creazione e modifica di un progetto
+-   [&check;] Gestire il salvataggio dell’associazione progetto-tecnologie con opportune regole di validazione
+-   [&check;] Eliminare opportunamente le relazioni alla cancellazione del progetto/technology
