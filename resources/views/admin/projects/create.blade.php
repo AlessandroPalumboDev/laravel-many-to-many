@@ -26,6 +26,7 @@
                             <label for="title" class="form-label">Nome Progetto</label>
                             <input type="text" class="form-control bg-black text-light" id="name" name="name" value="{{ old("name") }}" required/>
                         </div>
+
                         <div class="mb-3">
                             <label for="title" class="form-label">Tipo Progetto</label>
                             <select name="type_id" class="form-select bg-black text-light" aria-label="Default select example">
@@ -35,8 +36,26 @@
                                     <option value="{{$type->id}}" @if (old('type_id') == $type->id) selected @endif >{{$type->title}}</option>
                                 @endforeach
                               </select>
-                            
                         </div>
+
+
+                        <div class="mb-3">
+                            <label for="project-content" class="form-label">Tecnlogie utilizzate</label>
+
+                            <div>
+                                @foreach ($technologies as $technology)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="technologies[]" id="tec-{{$technology->id}}" value="{{$technology->id}}">
+                                    <label class="form-check-label" for="tec-{{$technology->id}}">{{$technology->name}}</label>
+                                </div>
+                                @endforeach
+                                
+                            </div>
+
+                              
+
+                        </div>
+
                         <div class="mb-3">
                             <label for="description" class="form-label">Descrizione Progetto</label>
                             <input type="text" class="form-control bg-black text-light" id="description" name="description" value="{{ old("description") }}" required/>
