@@ -17,13 +17,13 @@
                         Tipo: {{$project->type?->title ?: 'Non definito'}}
                     </h5>
 
-                    <hr>
+                    <hr class="text-black">
 
                     <h5>
                         Tecnologie utilizzate: 
                     </h5>
                     <ul>
-                        @foreach ($project->technology as $technology)
+                        @foreach ($project->technologies as $technology)
                         
                             <li >
                                 {{$technology->name}}
@@ -32,7 +32,7 @@
                         @endforeach
                     </ul>
 
-                    <hr>
+                    <hr class="text-black">
 
                     <h5>
                         Descrizione:

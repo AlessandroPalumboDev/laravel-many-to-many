@@ -62,10 +62,9 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show(Project $project, Technology $technology)
     {
-        $projects = Project::all();
-        return view('admin.projects.show', compact('project'));
+        return view('admin.projects.show', compact('project', 'technology'));
     }
 
     /**
@@ -77,7 +76,8 @@ class ProjectController extends Controller
         $types = Type::all();
         $technologies = Technology::all();
 
-        
+        $project->load('technologies');
+
 
         return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
@@ -97,6 +97,7 @@ class ProjectController extends Controller
         } else {
             $project->technologies()->detach();
         }
+
 
         return redirect()->route('admin.projects.show', $project->id);
     }
